@@ -1,85 +1,417 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY MBG</title>
-    <link href="style.css" rel="stylesheet">
+
+    <!-- ============================================================
+         JUDUL TAB BROWSER
+         Ubah "Adell • Portfolio" sesuai nama kamu
+    ============================================================ -->
+    <title>Adell • Portfolio</title>
+
+    <!-- Google Fonts — font dekoratif + font teks -->
+    <!-- Cormorant Garamond = judul elegan | DM Sans = teks bersih -->
+    <!-- Jika ingin ganti font, kunjungi fonts.google.com lalu tempel link baru di sini -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- File CSS utama -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav>
-        <div class="logo"> 
-            <h1>Adell</h1>
+
+    <!-- ============================================================
+         NAVIGASI ATAS (FIXED)
+         Tampil terus di atas layar saat scroll
+    ============================================================ -->
+    <nav id="navbar">
+        <!-- Logo / Nama singkat -->
+        <div class="logo">
+            <!-- Ubah teks "Adell" sesuai nama/inisial kamu -->
+            <span class="logo-text">Adell</span>
+            <span class="logo-dot">.</span>
         </div>
+
+        <!-- Menu navigasi -->
         <ul class="nav-links" id="menu">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#abt">ABOUT</a></li>
-            <li><a href="#wrk">WORKS</a></li>
-            <li><a href="#ctc">CONTACT</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#abt">About</a></li>
+            <li><a href="#wrk">Works</a></li>
+            <li><a href="#ctc">Contact</a></li>
         </ul>
-        <div class="burger" id="burger-btn">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+
+        <!-- Tombol burger (muncul di layar kecil / HP) -->
+        <button class="burger" id="burger-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        
+
+    <!-- ============================================================
+         SECTION 1 — HOME / HERO
+         Bagian pertama yang dilihat pengunjung
+    ============================================================ -->
+    <section class="section hero-section" id="home">
+
+        <!-- Dekorasi lingkaran blur di belakang (boleh dihapus jika tidak suka) -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+
         <div class="hero-content">
-            <p class="hero-label">hai</p>
-            <h1 class="hero-title">ucok bin alibaba</h1>
-            <p class="hero-subtitle">
-                member hcc - web developer
+
+            <!-- Sapaan kecil -->
+            <p class="hero-greeting">✦ Hai, perkenalkan saya</p>
+
+            <!-- NAMA BESAR — ubah sesuai nama kamu -->
+            <h1 class="hero-name">
+                Ucok<br>
+                <em>bin Alibaba</em>
+            </h1>
+
+            <!-- Deskripsi singkat — ubah sesuai profil kamu -->
+            <p class="hero-desc">
+                Member HCC &nbsp;·&nbsp; Web Developer<br>
+                Suka ngopi sambil nulis kode ☕
             </p>
 
+            <!-- Tombol aksi -->
             <div class="hero-buttons">
-                <a href="#abt" class="btn btn-primary">tentang saya</a>
-                <a href="#ctc" class="btn btn-outline">hubungi saya</a>
+                <!-- Tombol pertama → scroll ke about -->
+                <a href="#abt" class="btn btn-primary">Tentang Saya</a>
+                <!-- Tombol kedua → scroll ke contact -->
+                <a href="#ctc" class="btn btn-outline">Hubungi Saya</a>
             </div>
         </div>
+
+        <!-- Gambar dekorasi samping (bisa diganti ilustrasi / foto kamu) -->
+        <div class="hero-visual">
+            <!-- Lingkaran dekoratif besar -->
+            <div class="hero-circle">
+                <!-- ikon atau teks dekorasi di dalam lingkaran -->
+                <span class="hero-circle-text">✦</span>
+            </div>
+            <!-- Badge mengambang -->
+            <div class="hero-badge">Web Dev 💻</div>
+        </div>
+
     </section>
 
-    <section class="hero" id="abt">
-        <div class="about-photo">
+
+    <!-- ============================================================
+         SECTION 2 — ABOUT / TENTANG SAYA
+    ============================================================ -->
+    <section class="section about-section" id="abt">
+
+        <!-- Kolom kiri: Foto -->
+        <div class="about-left">
+
+            <!-- Frame foto lingkaran
+                 CARA GANTI FOTO:
+                 Ganti src="" di tag <img> di bawah dengan path foto kamu
+                 Contoh: src="foto/saya.jpg"  atau  src="https://link-foto.com/foto.jpg"
+            -->
+            <div class="about-photo-frame">
+                <img
+                    src="https://i.pravatar.cc/400?img=47"
+                    alt="Foto profil — ganti dengan foto kamu"
+                    class="about-photo"
+                >
+                <!-- Dekorasi cincin di luar foto -->
+                <div class="photo-ring"></div>
+                <!-- Badge kecil di foto -->
+                <div class="photo-badge">👋 Hello!</div>
+            </div>
 
         </div>
 
-        <div class="about-label">
+        <!-- Kolom kanan: Teks perkenalan -->
+        <div class="about-right">
+
+            <!-- Label seksi -->
+            <p class="section-label">— tentang saya</p>
+
+            <!-- JUDUL — ubah sesuai nama kamu -->
+            <h2 class="section-title">Hai, saya <br><span class="highlight">Ucok Alibaba</span></h2>
+
+            <!-- PARAGRAF PERKENALAN — isi dengan cerita kamu -->
+            <p class="about-text">
+                Saya adalah mahasiswa yang tertarik di bidang teknologi, khususnya
+                pengembangan web. Saat ini aktif sebagai member <strong>HCC (Himpunan
+                Computer Club)</strong> dan terus belajar membangun website yang
+                menarik dan fungsional.
+            </p>
+
+            <p class="about-text">
+                Hobi saya adalah menulis kode sambil minum kopi, menonton tutorial
+                YouTube, dan sesekali ikut lomba web design. Saya percaya bahwa
+                desain yang baik adalah yang bisa dipahami semua orang.
+            </p>
+
+            <!-- Skill chips — tambah / hapus sesuai skill kamu -->
+            <div class="skill-chips">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">Figma</span>
+                <span class="chip">Git</span>
+            </div>
 
         </div>
 
-        <div class="about-paragraph">
-
-        </div>
     </section>
 
-    <section class="hero" id="wrk">
-        <p class="section-label"></p>
-        <h2 class="section-title-light"></h2>
 
+    <!-- ============================================================
+         SECTION 3 — WORKS / PORTOFOLIO
+         Carousel dengan 3 slide proyek
+    ============================================================ -->
+    <section class="section works-section" id="wrk">
+
+        <!-- Header seksi -->
+        <div class="section-header">
+            <p class="section-label">— karya saya</p>
+            <h2 class="section-title-light">Portofolio</h2>
+        </div>
+
+        <!-- Pembungkus carousel -->
         <div class="carousel-wrapper">
+
+            <!-- Track = rel yang bergerak saat klik panah -->
             <div class="carousel-track" id="carousel-track">
 
-                <div class="slide-1">
+                <!-- ==========================================
+                     SLIDE 1 — PROYEK PERTAMA
+                     CARA GANTI GAMBAR: ubah URL di background-image (di style="")
+                     atau hapus style="" dan atur via CSS di #slide-1
+                ========================================== -->
+                <div class="carousel-slide" id="slide-1"
+                     style="background-image: url('https://images.unsplash.com/photo-1547658719-da2b51169166?w=800')">
 
+                    <!-- Overlay gelap agar teks terbaca -->
+                    <div class="slide-overlay"></div>
+
+                    <!-- Kartu teks dengan efek glassmorphism -->
+                    <div class="slide-card">
+                        <!-- Nomor proyek -->
+                        <span class="slide-number">01</span>
+                        <!-- Judul proyek — ubah sesuai proyek kamu -->
+                        <h3 class="slide-title">Website HCC</h3>
+                        <!-- Deskripsi singkat -->
+                        <p class="slide-desc">
+                            Website resmi organisasi kampus dengan desain modern,
+                            fitur artikel, dan halaman member.
+                        </p>
+                        <!-- Tag teknologi yang dipakai -->
+                        <div class="slide-tags">
+                            <span>HTML</span><span>CSS</span><span>JS</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="slide-2">
+                <!-- ==========================================
+                     SLIDE 2 — PROYEK KEDUA
+                ========================================== -->
+                <div class="carousel-slide" id="slide-2"
+                     style="background-image: url('https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800')">
 
+                    <div class="slide-overlay"></div>
+
+                    <div class="slide-card">
+                        <span class="slide-number">02</span>
+                        <!-- Ubah judul dan deskripsi sesuai proyek kamu -->
+                        <h3 class="slide-title">Toko Online Kecil</h3>
+                        <p class="slide-desc">
+                            Landing page produk UMKM lokal dengan tampilan
+                            responsif dan formulir pemesanan sederhana.
+                        </p>
+                        <div class="slide-tags">
+                            <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="slide-3">
+                <!-- ==========================================
+                     SLIDE 3 — PROYEK KETIGA
+                ========================================== -->
+                <div class="carousel-slide" id="slide-3"
+                     style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800')">
 
+                    <div class="slide-overlay"></div>
+
+                    <div class="slide-card">
+                        <span class="slide-number">03</span>
+                        <!-- Ubah judul dan deskripsi sesuai proyek kamu -->
+                        <h3 class="slide-title">Dashboard Statistik</h3>
+                        <p class="slide-desc">
+                            Antarmuka dashboard dengan grafik interaktif untuk
+                            memantau data secara real-time.
+                        </p>
+                        <div class="slide-tags">
+                            <span>HTML</span><span>CSS</span><span>Chart.js</span>
+                        </div>
+                    </div>
                 </div>
 
+            </div><!-- /carousel-track -->
+
+            <!-- Tombol panah kiri & kanan -->
+            <button class="carousel-btn btn-prev" id="btn-prev" aria-label="Slide sebelumnya">‹</button>
+            <button class="carousel-btn btn-next" id="btn-next" aria-label="Slide berikutnya">›</button>
+
+            <!-- Indikator titik-titik (dot) -->
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
             </div>
-        </div>
+
+        </div><!-- /carousel-wrapper -->
+
     </section>
 
-<script src="script.js"></script>
-</body>
 
+    <!-- ============================================================
+         SECTION 4 — CONTACT / KONTAK
+         Formulir dekoratif + ikon sosial media
+    ============================================================ -->
+    <section class="section contact-section" id="ctc">
+
+        <!-- Dekorasi blur di belakang -->
+        <div class="blob blob-4"></div>
+
+        <!-- Header seksi -->
+        <div class="section-header">
+            <p class="section-label">— hubungi saya</p>
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-intro">
+                Punya ide proyek? Ingin berkolaborasi? Atau sekadar mau menyapa?
+                Saya senang mendengar dari kamu!
+            </p>
+        </div>
+
+        <!-- Isi kontak: formulir + sosial media -->
+        <div class="contact-content">
+
+            <!-- Kartu formulir (efek glassmorphism) -->
+            <!-- CATATAN: formulir ini hanya kosmetik / tampilan saja -->
+            <!-- Untuk membuat form berfungsi kirim email, pelajari Formspree atau EmailJS -->
+            <div class="contact-form-card">
+
+                <h3 class="form-title">Kirim Pesan</h3>
+
+                <!-- INPUT NAMA -->
+                <div class="form-group">
+                    <label for="nama">Nama Kamu</label>
+                    <input type="text" id="nama" placeholder="Contoh: Budi Santoso">
+                </div>
+
+                <!-- INPUT EMAIL -->
+                <div class="form-group">
+                    <label for="email">Alamat Email</label>
+                    <input type="email" id="email" placeholder="budi@email.com">
+                </div>
+
+                <!-- INPUT PESAN -->
+                <div class="form-group">
+                    <label for="pesan">Pesan</label>
+                    <textarea id="pesan" rows="4" placeholder="Tulis pesanmu di sini..."></textarea>
+                </div>
+
+                <!-- TOMBOL KIRIM (belum berfungsi — hanya tampilan) -->
+                <button class="btn btn-primary btn-full" type="button">
+                    Kirim Pesan ✦
+                </button>
+
+            </div><!-- /contact-form-card -->
+
+
+            <!-- Kolom sosial media -->
+            <div class="contact-social">
+
+                <h3 class="social-title">Temukan Saya Di</h3>
+
+                <!-- ============================================
+                     IKON SOSIAL MEDIA
+                     CARA GANTI LINK:
+                     Ganti href="..." dengan link profil kamu
+                     Contoh WhatsApp: href="https://wa.me/6281234567890"
+                     Contoh Instagram: href="https://instagram.com/username_kamu"
+                     Contoh Facebook: href="https://facebook.com/username_kamu"
+                ============================================ -->
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/6281234567890" target="_blank" class="social-card social-wa">
+                    <div class="social-icon">
+                        <!-- Ikon WhatsApp (SVG inline agar tidak perlu file gambar) -->
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.123 1.532 5.855L.057 23.405a.5.5 0 00.615.612l5.652-1.461A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.507-5.234-1.392l-.374-.218-3.876 1.002 1.023-3.762-.24-.387A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <span class="social-name">WhatsApp</span>
+                        <!-- Ubah nomor WA kamu di sini -->
+                        <span class="social-handle">+62 812-3456-7890</span>
+                    </div>
+                    <span class="social-arrow">→</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/username_kamu" target="_blank" class="social-card social-ig">
+                    <div class="social-icon">
+                        <!-- Ikon Instagram (SVG inline) -->
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <span class="social-name">Instagram</span>
+                        <!-- Ubah username Instagram kamu di sini -->
+                        <span class="social-handle">@adell.dev</span>
+                    </div>
+                    <span class="social-arrow">→</span>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://facebook.com/username_kamu" target="_blank" class="social-card social-fb">
+                    <div class="social-icon">
+                        <!-- Ikon Facebook (SVG inline) -->
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <span class="social-name">Facebook</span>
+                        <!-- Ubah nama Facebook kamu di sini -->
+                        <span class="social-handle">Adell Developer</span>
+                    </div>
+                    <span class="social-arrow">→</span>
+                </a>
+
+            </div><!-- /contact-social -->
+
+        </div><!-- /contact-content -->
+
+    </section>
+
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <!-- Ubah nama dan tahun sesuai kamu -->
+        <p>© 2025 Adell · Dibuat dengan ♥ dan ☕</p>
+    </footer>
+
+
+    <!-- File JavaScript — harus di paling bawah agar HTML sudah terbaca lebih dulu -->
+    <script src="script.js"></script>
+
+</body>
 </html>
