@@ -1,0 +1,214 @@
+:root{
+  /* --- WARNA UTAMA (Pink Muda) --- */
+  --utama: #FBC5D8;            /* Pink muda estetik */
+  --utama-hover: #E8A7BD;      /* Pink agak gelap saat kursor di atas elemen */
+  --utama-terang: #FFF0F5;     /* Pink sangat lembut untuk latar belakang seksi */
+
+  /* --- WARNA SEKUNDER (Slate / Biru Keabu-abuan) --- */
+  --sekunder: #98A6D4;         /* Menyeimbangkan warna pink agar tetap profesional */
+  --sekunder-hover: #7E8CB7;
+  --sekunder-terang: #EBF0FF;
+
+  /* --- WARNA AKSEN (Rose Gold / Terakota) --- */
+  --aksen: #E28F83;            /* Untuk tombol CTA, badge, atau elemen penting */
+  --aksen-hover: #C9766A;
+
+  /* --- WARNA NETRAL (Latar Belakang & Teks) --- */
+  --latar-utama: #FAFAFA;      /* Latar belakang halaman web */
+  --latar-kartu: #FFFFFF;      /* Latar belakang untuk card/kontainer */
+  --teks-utama: #2C3539;       /* Warna teks utama (Arang gelap, lebih nyaman di mata) */
+  --teks-redup: #6C757D;       /* Warna teks tambahan atau keterangan (abu-abu) */
+
+  /* --- ELEMEN TAMBAHAN --- */
+  --warna-pembatas: #EAEAEA;   /* Warna border/garis tepi tipis */
+  --bayangan-kecil: 0 2px 4px rgba(44, 53, 57, 0.05);
+  --bayangan-sedang: 0 4px 12px rgba(44, 53, 57, 0.08);
+}
+
+/*selektor global*/
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MENGATUR LAYOUT NAVIGASI */
+nav {
+    display: flex;
+    background-color: var(--utama);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 100%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 5px;
+}
+
+.nav-links li a {
+    font-size: 2.2vh;
+    color: var(--teks-utama);
+    text-decoration: none;
+    padding: 8px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover{
+    background-color: var(--aksen-hover);
+    color: var(--sekunder-terang);
+    border-radius: 4px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+/* untuk membuat burger */
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--aksen);
+    margin: 5px;
+}
+
+.hero{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+#home{
+    background-image: 
+        linear-gradient(
+            to bottom,
+            rgba(30, 24, 18, 0.75) 0%,
+            rgba(30, 24, 18, 0.5) 60%,
+            rgba(30, 24, 18, 0.9) 100%
+        ),
+        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    animation: fadeUp 0.9s ease forwards;
+}
+
+.hero-label {
+    font-size: 1.1rem;
+    color: rgba(255, 200, 120, 0.9);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+/* Judul nama besar di Home */
+.hero-title {
+    font-family: var(--font-judul);
+    /* clamp(min, ideal, max) — ukuran responsif otomatis */
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    color: var(--warna-teks-putih);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+/* Teks deskripsi singkat di bawah nama */
+.hero-subtitle {
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 500px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+}
+
+/* Wrapper untuk tombol-tombol CTA */
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap; /* Tombol pindah ke baris baru jika layar sempit */
+}
+
+/* Gaya dasar untuk semua tombol */
+.btn {
+    padding: 14px 32px;
+    border-radius: var(--radius-bulat);
+    font-family: var(--font-teks);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transisi);
+    border: 2px solid transparent;
+    display: inline-block;
+}
+
+/* Tombol utama (solid oranye) */
+.btn-primary {
+    background-color: var(--warna-utama);
+    color: var(--warna-teks-putih);
+    border-color: var(--warna-utama);
+}
+
+.btn-primary:hover {
+    background-color: var(--warna-utama-gelap);
+    border-color: var(--warna-utama-gelap);
+    transform: translateY(-2px); /* Efek "terangkat" saat hover */
+    box-shadow: 0 8px 25px rgba(255, 122, 0, 0.4);
+}
+
+/* Tombol outline (transparan dengan border) */
+.btn-outline {
+    background-color: transparent;
+    color: var(--warna-teks-putih);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--warna-teks-putih);
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 720px) {
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+        background-color: var(--utama);
+    }
+
+    .nav-links.tampil{
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px;
+    }
+
+    .burger{
+        display: block;
+    }
+}
