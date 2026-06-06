@@ -272,9 +272,9 @@ ul {
 
 
 /* ================================================================
-   5. HERO / HOME
+   5. HOME
 ================================================================ */
-.hero-section {
+.home-section {
     min-height: 100vh;        /* Tinggi = satu layar penuh */
     display: flex;
     align-items: center;
@@ -307,14 +307,14 @@ ul {
 .blob-3 { width: 250px; height: 250px; background: var(--peach);        bottom: 5%; left: 30%; }
 .blob-4 { width: 400px; height: 400px; background: var(--pink-utama);   bottom: -100px; right: -100px; }
 
-/* Konten teks hero (kiri) */
-.hero-content {
+/* Konten teks home (kiri) */
+.home-content {
     max-width: 520px;
     z-index: 2;
     animation: fadeUp 0.8s ease forwards; /* Animasi muncul dari bawah */
 }
 
-.hero-greeting {
+.home-greeting {
     font-size: 1rem;
     color: var(--pink-muda);
     letter-spacing: 2px;
@@ -322,41 +322,41 @@ ul {
     opacity: 0.9;
 }
 
-/* Nama besar di hero */
-.hero-name {
+/* Nama besar di home */
+.home-name {
     font-family: var(--font-judul);
     font-size: clamp(3rem, 6vw, 5.5rem); /* Responsif: min 3rem, ideal 6vw, max 5.5rem */
     color: var(--putih);
     line-height: 1.05;
     margin-bottom: 24px;
 }
-.hero-name em {
+.home-name em {
     color: var(--pink-muda);       /* Kata miring berwarna pink muda */
     font-style: italic;
 }
 
-.hero-desc {
+.home-desc {
     font-size: 1rem;
     color: rgba(255,255,255,0.7);
     line-height: 1.8;
     margin-bottom: 40px;
 }
 
-.hero-buttons {
+.home-buttons {
     display: flex;
     gap: 16px;
     flex-wrap: wrap; /* Tombol pindah baris jika layar sempit */
 }
 
-/* Visual dekoratif di kanan hero */
-.hero-visual {
+/* Visual dekoratif di kanan home */
+.home-visual {
     position: relative;
     z-index: 2;
     animation: fadeUp 0.8s ease 0.2s both; /* Delay 0.2s = muncul setelah teks */
 }
 
 /* Lingkaran besar dekoratif */
-.hero-circle {
+.home-circle {
     width: 280px;
     height: 280px;
     border-radius: 50%;
@@ -370,14 +370,14 @@ ul {
     /* Animasi berputar pelan (rotate lambat) */
     animation: rotateSlow 20s linear infinite;
 }
-.hero-circle-text {
+.home-circle-text {
     font-size: 3rem;
     color: var(--pink-muda);
     opacity: 0.8;
 }
 
 /* Badge mengambang di atas lingkaran */
-.hero-badge {
+.home-badge {
     position: absolute;
     top: -20px;
     right: -20px;
@@ -852,7 +852,7 @@ ul {
     }
 }
 
-/* Berputar perlahan (untuk ring foto dan lingkaran hero) */
+/* Berputar perlahan (untuk ring foto dan lingkaran home) */
 @keyframes rotateSlow {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
@@ -863,7 +863,6 @@ ul {
     0%, 100% { transform: translateY(0); }
     50%       { transform: translateY(-12px); }
 }
-
 
 /* ================================================================
    11. RESPONSIF (MOBILE / HP)
@@ -891,34 +890,44 @@ ul {
         width: 100%;
         background: rgba(255,245,248,0.97);
         backdrop-filter: blur(12px);
-        padding: 20px 0 28px;
+        padding: 30px 0;
         border-bottom: 1px solid rgba(232,104,138,0.1);
-        gap: 0;
+        gap: 16px;
+        align-items: center;
     }
-    /* Kelas .tampil ditambahkan JS saat burger diklik */
+    
+    /* toggle navigasi*/
     .nav-links.tampil {
         display: flex;
     }
+    
+    /* merata tengahkan link*/
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
     .nav-links li a {
-        padding: 12px 24px;
-        border-radius: 0;
+        display: inline-block; /* PERBAIKAN: Area klik lebih rapi & tidak melebar ke seluruh layar */
+        padding: 12px 32px;
+        border-radius: 50px; /* PERBAIKAN: Ubah dari 0 menjadi 50px agar efek hover membentuk pil/tombol yang estetik */
     }
 
     .burger {
         display: flex; /* Tampilkan tombol burger */
     }
 
-    /* Hero: tumpuk vertikal di HP */
-    .hero-section {
+    /* home: tumpuk vertikal di HP */
+    .home-section {
         flex-direction: column;
         text-align: center;
         padding-top: 100px;
         gap: 40px;
     }
-    .hero-buttons {
+    .home-buttons {
         justify-content: center;
     }
-    .hero-circle {
+    .home-circle {
         width: 200px;
         height: 200px;
     }
